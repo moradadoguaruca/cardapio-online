@@ -18,9 +18,7 @@ const UI = {
     footerNote: {
       tax: "Uma taxa de 10% será adicionada à conta."
     },
-    hero: {
-      placeholderBadge: "imagem provisória"
-    },
+    
     roomService: {
       title: "Serviço de quarto",
       action: "Ligue para {phone}"
@@ -45,9 +43,7 @@ const UI = {
     footerNote: {
       tax: "Se añadirá una tasa del 10% a la cuenta."
     },
-    hero: {
-      placeholderBadge: "imagen provisoria"
-    },
+    
     roomService: {
       title: "Servicio a la habitación",
       action: "Llame al {phone}"
