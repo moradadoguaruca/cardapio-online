@@ -61,11 +61,11 @@ const siteConfig = {
   // PLACEHOLDER — este é um gráfico provisório, não uma foto real.
   // Substituir por uma fotografia real de um prato/ambiente da casa
   // (recomendado: .jpg otimizado, tons escuros, mínimo 1200px de largura).
-  heroImage: "images/hero-placeholder.svg",
+  heroImage: "images/hero_salmao_prato.jpg",
   heroImageAlt: {
-    pt: "Imagem ilustrativa — substituir por foto real",
-    es: "Imagen ilustrativa — sustituir por foto real",
-    en: "Placeholder image — replace with real photo"
+    pt: "",
+    es: "",
+    en: ""
   },
 
   // Rodapé / links externos
