@@ -34,7 +34,7 @@ const siteConfig = {
   showHotelInfo: true,
   hotelInfo: {
     pt: "Uma pousada pé na areia em Mariscal, Bombinhas.",
-    es: "Una posada con acceso directo a la playa en Mariscal, Bombinhas.",
+    es: "Una posada en la playa de Mariscal, Bombinhas.",
     en: "A beachfront pousada in Mariscal, Bombinhas."
   },
 
@@ -63,8 +63,8 @@ const siteConfig = {
   // (recomendado: .jpg otimizado, tons escuros, mínimo 1200px de largura).
   heroImage: "images/hero_salmao_prato.jpg",
   heroImageAlt: {
-    pt: "",
-    es: "",
+    pt: "Prato de Salmão grelhado na crosta de castanha, acompanhado de puré de batata e tomate-cereja",
+    es: "Plato de Salmón a la plancha con crocante de castañas, acompañado de pure de papa y tomates cherry",
     en: ""
   },
 
