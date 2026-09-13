@@ -126,19 +126,6 @@ button {
   );
 }
 
-.hero-zone__badge {
-  position: absolute;
-  z-index: 3;
-  right: 14px;
-  bottom: 14px;
-  background: rgba(43, 46, 31, 0.55);
-  color: var(--hero-text);
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--hero-line);
-}
-
 .hero-zone__content {
   position: relative;
   z-index: 2;
