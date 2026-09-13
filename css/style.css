@@ -1,0 +1,786 @@
+/* -----------------------------------------------------------------------
+   MORADA DO GUARUÇÁ — CARDÁPIO DIGITAL
+   Tokens visuais
+----------------------------------------------------------------------- */
+
+:root {
+  /* Cor — paleta oficial fornecida por Diego */
+  --bg: #F6F2E7;         /* fundo geral da página (zona clara) */
+  --paper: #FFFFFF;      /* superfícies elevadas sobre --bg (ex.: nav sticky) */
+  --ink: #2B2E1F;        /* texto principal na zona clara */
+  --ink-soft: #5B5E48;   /* texto secundário na zona clara */
+  --olive: #55632F;      /* verde de marca — ícones, detalhes */
+  --olive-deep: #3E4A22; /* usado no scrim (véu) sobre a foto do hero */
+  --olive-soft: #93A06A; /* toques claros de oliva, uso pontual */
+  --sand: #B98A2E;       /* ÚNICO acento — preço, ativo no nav, ícones sobre foto */
+  --line: #E1DBC6;       /* hairlines na zona clara */
+
+  /* Cor — apenas para textos/ícones em cima da FOTO do hero (fundo escuro) */
+  --hero-text: #F6F2E7;
+  --hero-text-soft: rgba(246, 242, 231, 0.8);
+  --hero-line: rgba(246, 242, 231, 0.32);
+
+  /* Tipografia */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --content-width: 640px;
+  --gutter: 22px;
+  --radius: 14px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+/* -----------------------------------------------------------------------
+   HERO-ZONE
+   Contêiner único: foto de fundo + véu (scrim) + todo o conteúdo do
+   topo sobreposto (idioma, logo, institucional, serviço de quarto,
+   links sociais). Ocupa o espaço que esses conteúdos precisarem — a
+   altura NÃO é fixa em pixels, então se algum bloco opcional (ex.:
+   institucional) for desligado em siteConfig, a hero-zone encolhe
+   naturalmente e a foto continua enquadrando o que sobrar.
+   Abaixo dela (nav de categorias em diante) tudo volta a ser --bg claro.
+----------------------------------------------------------------------- */
+
+.hero-zone {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(430px, 58vh, 620px);
+  display: flex;
+  background: var(--olive-deep); /* aparece só por uma fração de segundo antes da imagem carregar */
+}
+
+.hero-zone__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Véu sutil em tom oliva-escuro (não preto puro) para manter o texto
+   claro legível sobre a foto, sem escurecer a imagem inteira. Mais
+   presente nas bordas superior/inferior, onde fica o texto. */
+.hero-zone__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(62, 74, 34, 0.58) 0%,
+    rgba(62, 74, 34, 0.22) 38%,
+    rgba(62, 74, 34, 0.30) 62%,
+    rgba(62, 74, 34, 0.62) 100%
+  );
+}
+
+.hero-zone__badge {
+  position: absolute;
+  z-index: 3;
+  right: 14px;
+  bottom: 14px;
+  background: rgba(43, 46, 31, 0.55);
+  color: var(--hero-text);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hero-line);
+}
+
+.hero-zone__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 20px var(--gutter) 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  flex: 1;
+  color: var(--hero-text);
+}
+
+/* -----------------------------------------------------------------------
+   IDIOMA
+----------------------------------------------------------------------- */
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--hero-text-soft);
+}
+
+.lang-switch button {
+  padding: 4px 2px;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.lang-switch button.is-active {
+  color: var(--hero-text);
+  border-bottom-color: var(--sand);
+}
+
+.lang-switch .divider {
+  color: var(--hero-line);
+}
+
+/* -----------------------------------------------------------------------
+   LOGO + LOCALIZAÇÃO
+----------------------------------------------------------------------- */
+
+.site-header {
+  text-align: center;
+}
+
+.site-header__logo {
+  max-width: 200px;
+  margin: 0 auto 12px;
+}
+
+.site-header__logo img {
+  width: 100%;
+  height: auto;
+  /* Força o logo para um tom claro sólido, já que ele sempre aparece
+     sobre a foto do hero. Funciona bem para um logo de traço único
+     (como o placeholder atual). Se o logo definitivo tiver cores
+     próprias importantes, substitua este filtro por um arquivo de logo
+     já claro (ver comentário em config.js -> logoImage). */
+  filter: brightness(0) invert(1);
+  opacity: 0.96;
+}
+
+.site-header__location {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--hero-text-soft);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* -----------------------------------------------------------------------
+   BLOCO INSTITUCIONAL
+----------------------------------------------------------------------- */
+
+.hotel-info {
+  text-align: center;
+}
+
+.hotel-info__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(17px, 4vw, 20px);
+  color: var(--hero-text);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.awards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.awards .award img {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* -----------------------------------------------------------------------
+   SERVIÇO DE QUARTO
+   "Chip" translúcido com leve desfoque — sutil, garante contraste sobre
+   qualquer foto sem virar um bloco pesado. Ordem: sino, texto, número,
+   telefone (ver ordem no HTML).
+----------------------------------------------------------------------- */
+
+.room-service {
+  display: flex;
+  justify-content: center;
+}
+
+.room-service__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(246, 242, 231, 0.14);
+  border: 1px solid var(--hero-line);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 999px;
+  padding: 10px 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.room-service__icon {
+  color: var(--sand);
+  display: flex;
+}
+
+.room-service__title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--hero-text);
+}
+
+.room-service__action {
+  font-size: 14px;
+  color: var(--hero-text-soft);
+}
+
+/* -----------------------------------------------------------------------
+   LINKS SOCIAIS (usados tanto no topo quanto no footer)
+----------------------------------------------------------------------- */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  font-size: 13px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s var(--ease);
+}
+
+.social-links--top {
+  color: var(--hero-text-soft);
+}
+
+.social-links--top a {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.social-links--top a:hover {
+  border-color: var(--sand);
+}
+
+.social-links--footer {
+  color: var(--ink-soft);
+}
+
+.social-links--footer a:hover {
+  border-color: var(--sand);
+}
+
+/* -----------------------------------------------------------------------
+   BARRA FIXA (idioma + Serviço de Quarto)
+   position:fixed (não sticky): fica sempre no mesmo lugar no DOM, mas
+   SÓ aparece (opacity + leve deslize) quando body.is-past-hero é
+   ativado — mesmo gatilho e mesma sensação do botão "voltar ao topo".
+   Por estar fixa (fora do fluxo), a navegação de categorias precisa
+   reservar o espaço dela no topo com "top: var(--sticky-bar-h)".
+----------------------------------------------------------------------- */
+
+:root {
+  --sticky-bar-h: 52px;
+  --tax-bar-h: 30px;
+}
+
+.sticky-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 25;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 16px -12px rgba(43, 46, 31, 0.3);
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+body.is-past-hero .sticky-bar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sticky-bar__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  height: var(--sticky-bar-h);
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Chip do Serviço de Quarto — reaproveita o mesmo conteúdo (ícones +
+   textos) do bloco no hero, só que compacto e adaptado a um fundo
+   claro: lá em cima é um chip "vidro" translúcido sobre foto; aqui é um
+   chip sólido em tom areia bem suave sobre o --paper, mesma ideia de
+   "pílula com contorno", cores adaptadas ao fundo claro. */
+.sticky-bar__call {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(185, 138, 46, 0.10);
+  border: 1px solid rgba(185, 138, 46, 0.28);
+  border-radius: 999px;
+  padding: 7px 13px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sticky-bar__call[hidden] { display: none; }
+
+.sticky-bar__call .chip-icon {
+  color: var(--olive);
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.sticky-bar__call .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.sticky-bar__call-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.sticky-bar__call-action {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* Em telas muito estreitas, esconde só o rótulo "Serviço de quarto" e
+   mantém "Ligue para 245" + os dois ícones — evita apertar demais a
+   barra ao lado do seletor de idioma. */
+@media (max-width: 380px) {
+  .sticky-bar__call-title { display: none; }
+}
+
+/* Seletor de idioma da barra fixa — pequeno "segmented control" (pílula
+   com fundo, botão ativo preenchido), em vez de texto solto sublinhado.
+   O do topo do hero (sobre a foto) continua como estava, só este ganhou
+   o tratamento novo, pensado para conviver bem ao lado do chip acima. */
+.lang-switch--sticky {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 3px;
+  flex: 0 0 auto;
+}
+
+.lang-switch--sticky .divider { display: none; }
+
+.lang-switch--sticky button {
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  border-bottom: none;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.lang-switch--sticky button.is-active {
+  background: var(--olive);
+  color: var(--bg);
+}
+
+/* -----------------------------------------------------------------------
+   BOTÃO VOLTAR AO TOPO
+   Fica sempre no DOM (para não ter que criar/destruir no JS); some com
+   opacidade + leve deslocamento quando ainda estamos na hero-zone, e
+   aparece assim que body.is-past-hero é ativado (mesmo gatilho que dá
+   a borda ao nav — ver initHeroTransition em main.js).
+----------------------------------------------------------------------- */
+
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: calc(var(--tax-bar-h) + 16px);
+  z-index: 30;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--olive);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px -6px rgba(43, 46, 31, 0.4);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), bottom 0.3s var(--ease);
+}
+
+body.is-past-hero .back-to-top {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Quando o rodapé de verdade aparece, a franja da taxa some (ver
+   .tax-note-bar mais abaixo) — então o botão desce de volta, já que
+   não tem mais nada reservando aquele espaço embaixo dele. */
+body.is-footer-visible .back-to-top {
+  bottom: 18px;
+}
+
+.back-to-top .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* -----------------------------------------------------------------------
+   FRANJA FIXA — TAXA DE SERVIÇO
+   Mesmo padrão de aparição do back-to-top (body.is-past-hero), mais um
+   segundo gatilho (body.is-footer-visible) que a esconde quando o
+   rodapé de verdade já está na tela, pra não competir com ele.
+----------------------------------------------------------------------- */
+
+.tax-note-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 22;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-top: 1px solid var(--line);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+.tax-note-bar p {
+  margin: 0;
+  height: var(--tax-bar-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--ink-soft);
+  padding: 0 var(--gutter);
+}
+
+body.is-past-hero .tax-note-bar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.is-footer-visible .tax-note-bar {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* -----------------------------------------------------------------------
+   NAVEGAÇÃO DE CATEGORIAS
+   Sticky, gruda logo abaixo de onde a barra fixa reserva espaço (ver
+   --sticky-bar-h). Os itens agora são chips (fundo + cantos
+   arredondados), não mais texto solto sublinhado — mesma linguagem
+   visual da barra fixa acima, para o conjunto parecer um único
+   cabeçalho coeso ao rolar.
+----------------------------------------------------------------------- */
+
+.category-nav-wrap {
+  position: sticky;
+  top: var(--sticky-bar-h);
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+body.is-past-hero .category-nav-wrap {
+  border-bottom-color: var(--line);
+  box-shadow: 0 6px 16px -12px rgba(43, 46, 31, 0.25);
+}
+
+.category-nav {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px var(--gutter);
+  scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar { display: none; }
+
+.cat-pill {
+  flex: 0 0 auto;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  background: var(--bg);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 7px 15px;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.cat-pill.is-active {
+  color: var(--bg);
+  background: var(--olive);
+  border-color: var(--olive);
+}
+
+/* -----------------------------------------------------------------------
+   MENU
+----------------------------------------------------------------------- */
+
+.menu {
+  background: var(--bg);
+  padding: 8px var(--gutter) 40px;
+}
+
+.menu-sections {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.cat-section {
+  padding-top: 30px;
+}
+
+.cat-section:not(:first-child) {
+  padding-top: 4px;
+}
+
+/* Divisor ondulado — ocupa toda a largura da coluna de conteúdo (não é
+   mais um ornamento curto), com espaço generoso acima/abaixo. Usa um
+   tile de 30px que se repete (repeat-x), então se adapta sozinho a
+   qualquer largura de tela sem esticar ou distorcer a onda. */
+.cat-divider {
+  width: 100%;
+  height: 14px;
+  margin: 46px 0 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 14'%3E%3Cpath d='M0 7 C 10 -2, 20 16, 30 7' stroke='%2355632F' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 30px 14px;
+  opacity: 0.65;
+}
+
+.cat-section__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(21px, 5vw, 25px);
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+/* Nota opcional da categoria (ex.: legenda do selo 0% em Coquetéis
+   Praianos e Clássicos e Autorais). Só aparece quando cat.nota existe
+   em data.js — a maioria das categorias não tem esse campo. */
+.cat-section__note {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  max-width: 48ch;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada prato vive num bloco sutil — só um tom levemente diferente do
+   fundo (--paper sobre --bg) e uma linha mínima na cor de acento, só
+   para delimitar onde começa e termina a informação de cada item. Nada
+   de sombra, nada de borda grossa — a intenção é "quase imperceptível". */
+.menu-item {
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 1px solid rgba(185, 138, 46, 0.28); /* --sand em baixa opacidade */
+  border-radius: 10px;
+}
+
+.menu-item__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.menu-item__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 17px;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* Selo "0%" — texto explícito (não só um ícone) para não deixar dúvida:
+   o item tem versão sem álcool disponível. A legenda geral desse selo
+   vive em .cat-section__note, só nas categorias que têm itens assim. */
+.badge-zero {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 1px 6px;
+  margin-left: 7px;
+  border-radius: 999px;
+  border: 1px solid var(--olive-soft);
+  color: var(--olive);
+  vertical-align: middle;
+}
+
+.menu-item__price {
+  font-size: 14px;
+  color: var(--sand);
+  white-space: nowrap;
+}
+
+.menu-item__desc {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 54ch;
+}
+
+/* -----------------------------------------------------------------------
+   FOOTER
+----------------------------------------------------------------------- */
+
+.site-footer {
+  text-align: center;
+  background: var(--bg);
+  padding: 30px var(--gutter) 44px;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.site-footer__location {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+/* -----------------------------------------------------------------------
+   RESPONSIVO
+----------------------------------------------------------------------- */
+
+@media (min-width: 600px) {
+  :root { --gutter: 32px; }
+}
+
+@media (min-width: 1024px) {
+  :root { --content-width: 720px; --gutter: 0; }
+  body { font-size: 17px; }
+  .top-bar, .site-header, .hotel-info, .room-service,
+  .social-links--top, .hero-zone__content, .sticky-bar__inner,
+  .category-nav, .menu-sections, .site-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   ACESSIBILIDADE
+----------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

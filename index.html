@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio · Morada do Guaruçá</title>
+  <meta name="description" content="Cardápio digital · Morada do Guaruçá · Praia de Mariscal, Bombinhas">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       HERO-ZONE
+       Bloco único: imagem de fundo (foto do prato/ambiente) + todo o
+       conteúdo do "topo" do site sobreposto a ela (idioma, logo,
+       localização, institucional e serviço de quarto). Termina exatamente
+       onde começa a navegação de categorias — a partir dali a imagem não
+       aparece mais (fluxo normal de documento, não é posição fixa).
+
+       Qualquer alteração de COR DE TEXTO aqui deve continuar usando os
+       tokens --bg / --olive-soft / --sand (tons claros), nunca --ink,
+       porque o fundo é escuro (foto). Ver bloco ".hero-zone" no CSS.
+  ===================================================================== -->
+  <div class="hero-zone" id="heroZone">
+
+    <img class="hero-zone__bg" id="heroImage" src="" alt="">
+    <div class="hero-zone__scrim" aria-hidden="true"></div>
+    <span class="hero-zone__badge" data-i18n="hero.placeholderBadge"></span>
+
+    <div class="hero-zone__content">
+
+      <!-- IDIOMA (gerado por main.js a partir de siteConfig.enabledLangs) -->
+      <div class="top-bar">
+        <div class="lang-switch" id="langSwitch" data-lang-mount role="group" aria-label="Idioma / Language"></div>
+      </div>
+
+      <!-- LOGO + LOCALIZAÇÃO -->
+      <header class="site-header">
+        <div class="site-header__logo">
+          <img id="siteLogo" src="" alt="">
+        </div>
+        <p class="site-header__location" data-config="location"></p>
+      </header>
+
+      <!-- BLOCO INSTITUCIONAL + SELOS (opcional, ver siteConfig.showHotelInfo) -->
+      <section class="hotel-info" id="hotelInfoBlock" hidden>
+        <p class="hotel-info__text" data-config="hotelInfoText"></p>
+        <div class="awards" id="awardsBlock" hidden></div>
+      </section>
+
+      <!-- SERVIÇO DE QUARTO (opcional, ver siteConfig.showRoomService)
+           Ordem pedida: sino primeiro, depois o texto, depois "Ligue
+           para 245", e o ícone de telefone por último, após o número. -->
+      <section class="room-service" id="roomServiceBlock" hidden>
+        <div class="room-service__inner">
+          <span class="room-service__icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 16.5c0-4.7 3.6-8 8-8s8 3.3 8 8"/>
+              <line x1="2" y1="16.5" x2="19" y2="16.5"/>
+              <line x1="11" y1="8.5" x2="11" y2="6.3"/>
+              <circle cx="11" cy="5.1" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="room-service__title" data-i18n="roomService.title"></span>
+          <span class="room-service__action" data-i18n="roomService.action"></span>
+          <span class="room-service__icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 4h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3c0 1-.9 1.8-1.9 1.7C10.9 19 5 13.1 4.3 6.9 4.2 5.9 5 5 6 5Z"/>
+            </svg>
+          </span>
+        </div>
+      </section>
+
+      <!-- LINKS SOCIAIS — duplicados do footer, exibidos aqui também
+           antes da navegação de categorias, com ícone à frente. Usam os
+           mesmos data-i18n do footer (footer.website / footer.instagram)
+           e os mesmos links de siteConfig, populados por main.js. -->
+      <div class="social-links social-links--top">
+        <a id="footerWebsiteTop" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/>
+            <line x1="3.5" y1="12" x2="20.5" y2="12"/>
+            <path d="M12 3.5c2.5 2.5 3.8 5.6 3.8 8.5s-1.3 6-3.8 8.5c-2.5-2.5-3.8-5.6-3.8-8.5S9.5 6 12 3.5Z"/>
+          </svg>
+          <span data-i18n="footer.website"></span>
+        </a>
+        <a id="footerInstagramTop" href="#" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="16.3" cy="7.7" r="0.6" fill="currentColor" stroke="none"/>
+          </svg>
+          <span data-i18n="footer.instagram"></span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       BARRA FIXA (idioma + Serviço de Quarto)
+       Agora é position:fixed e começa OCULTA (opacity/transform), e só
+       aparece quando body.is-past-hero é ativado — exatamente o mesmo
+       gatilho e a mesma sensação do botão "voltar ao topo" (ver
+       initHeroTransition em main.js). Antes ela usava position:sticky e
+       ficava sempre visível assim que a hero-zone acabava; agora ela
+       fica escondida enquanto a hero-zone estiver na tela e só surge
+       (com uma leve transição) quando o cabeçalho sai de vista.
+
+       O conteúdo do lado esquerdo é EXATAMENTE o mesmo do Serviço de
+       Quarto lá no hero (mesmos data-i18n "roomService.title" e
+       "roomService.action", mesmos ícones de sino/telefone) — só num
+       formato compacto (chip) para caber numa barra fina. Como usa as
+       mesmas chaves de tradução, qualquer alteração de texto no
+       Serviço de Quarto do hero já atualiza esta barra também, sem
+       precisar editar em dois lugares.
+  ===================================================================== -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar__inner">
+      <div class="sticky-bar__call" id="stickyBarCall">
+        <span class="chip-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 16.5c0-4.7 3.6-8 8-8s8 3.3 8 8"/>
+            <line x1="2" y1="16.5" x2="19" y2="16.5"/>
+            <line x1="11" y1="8.5" x2="11" y2="6.3"/>
+            <circle cx="11" cy="5.1" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <span class="sticky-bar__call-title" data-i18n="roomService.title"></span>
+        <span class="sticky-bar__call-action" data-i18n="roomService.action"></span>
+        <span class="chip-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 4h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3c0 1-.9 1.8-1.9 1.7C10.9 19 5 13.1 4.3 6.9 4.2 5.9 5 5 6 5Z"/>
+          </svg>
+        </span>
+      </div>
+      <div class="lang-switch lang-switch--sticky" id="langSwitchSticky" data-lang-mount role="group" aria-label="Idioma / Language"></div>
+    </div>
+  </div>
+
+  <!-- NAVEGAÇÃO DE CATEGORIAS — a partir daqui, fundo claro sólido -->
+  <nav class="category-nav-wrap" aria-label="Categorias do cardápio">
+    <div class="category-nav" id="categoryNav" role="tablist"></div>
+  </nav>
+
+  <!-- CARDÁPIO -->
+  <main class="menu">
+    <h1 class="visually-hidden" data-i18n="menu.sectionTitle"></h1>
+    <div class="menu-sections" id="menuSections"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="site-footer__name" data-config="hotelNameFooter"></p>
+    <p class="site-footer__location" data-config="location"></p>
+    <div class="social-links social-links--footer">
+      <a id="footerWebsite" href="#" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="8.5"/>
+          <line x1="3.5" y1="12" x2="20.5" y2="12"/>
+          <path d="M12 3.5c2.5 2.5 3.8 5.6 3.8 8.5s-1.3 6-3.8 8.5c-2.5-2.5-3.8-5.6-3.8-8.5S9.5 6 12 3.5Z"/>
+        </svg>
+        <span data-i18n="footer.website"></span>
+      </a>
+      <a id="footerInstagram" href="#" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="16.3" cy="7.7" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+        <span data-i18n="footer.instagram"></span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO — some/aparece via a mesma classe is-past-hero
+       que já controlava a borda do nav (ver main.js -> initHeroTransition) -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5"/>
+      <path d="M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- FRANJA FIXA — taxa de serviço. Aparece junto com o resto (ver
+       body.is-past-hero) e se esconde sozinha quando o rodapé de
+       verdade (lá embaixo) entra na tela, pra não sobrepor ele. -->
+  <div class="tax-note-bar" id="taxNoteBar">
+    <p data-i18n="footerNote.tax"></p>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
