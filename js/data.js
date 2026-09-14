@@ -147,7 +147,7 @@ const menuData = [
   
   // ============ ENTRADAS ============
   { id: "entradas-01", categoria: "entradas",
-    nome: { pt: "Búfala e Pesto" },
+    nome: { pt: "Búfala & Pesto" },
     descricao: { pt: "Clássica mussarela de búfala com molho pesto e tomate-cereja assado, acompanhada de torradas de pão italiano.",
                  es: "Clásica muzarella de búfala con pesto y tomates cherry asados, acompañada de tostadas de pan italiano." },
     preco: "66,00", imagem: null },
@@ -165,15 +165,18 @@ const menuData = [
   // ============ SALADAS ============
   { id: "saladas-01", categoria: "saladas",
     nome: { pt: "Salada Caesar" },
-    descricao: { pt: "Mix de folhas frescas, frango grelhado, tomate cereja, parmesão e croutons, servido com molho cremoso de iogurte." },
+    descricao: { pt: "Mix de folhas frescas, frango grelhado, tomate-cereja, parmesão e croutons, servido com molho cremoso de iogurte.",
+                 es: "Mix de hojas frescas, pollo salteado, tomates cherry, queso parmesano y croutons, servido con salsa cremosa de yogurt." },
     preco: "55,90", imagem: null },
   { id: "saladas-02", categoria: "saladas",
     nome: { pt: "Salada Crispy" },
-    descricao: { pt: "Mix de folhas verdes com bacon crocante, queijo parmesão e nossa redução especial de balsâmico." },
+    descricao: { pt: "Mix de folhas verdes com bacon crocante, queijo parmesão e nossa redução especial de balsâmico.",
+                 es: "Mix de hojas verdes con bacon cujiente, queso parmesano y nuestra reducción especial de balsámico." },
     preco: "45,90", imagem: null },
   { id: "saladas-03", categoria: "saladas",
     nome: { pt: "Salada de Folhas com Salmão" },
-    descricao: { pt: "Mix de folhas com lascas de salmão grelhado, tomate-cereja, manga fresca e creme azedo." },
+    descricao: { pt: "Mix de folhas verdes com lascas de salmão grelhado, tomate-cereja, manga fresca e creme azedo.",
+                 es: "Mix de hojas verdes con trozos de salmón salteado, tomates cherry, mango fresco y crema ácida." },
     preco: "69,00", imagem: null },
 
   // ============ KIDS ============
