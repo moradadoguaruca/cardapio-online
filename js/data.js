@@ -45,39 +45,40 @@
 
 const categories = [
   // ---------- COZINHA ----------
-  { id: "petiscos", nome: { pt: "Petiscos" } },
+  { id: "petiscos", nome: { pt: "Petiscos", es: "Para picar" } },
   { id: "entradas", nome: { pt: "Entradas" } },
-  { id: "saladas", nome: { pt: "Saladas" } },
-  { id: "kids", nome: { pt: "Kids" } },
-  { id: "massas-risotos", nome: { pt: "Massas e Risotos" } },
-  { id: "peixes-individual", nome: { pt: "Peixes e Frutos do Mar" } },
-  { id: "carnes-individual", nome: { pt: "Carnes e Aves" } },
-  { id: "peixes-compartilhar", nome: { pt: "Peixes e Frutos do Mar · Para 2" } },
-  { id: "carnes-compartilhar", nome: { pt: "Carnes e Aves · Para 2" } },
-  { id: "sanduiches", nome: { pt: "Sanduíches" } },
-  { id: "hamburgueres", nome: { pt: "Hambúrgueres" } },
-  { id: "sobremesas", nome: { pt: "Sobremesas" } },
-  { id: "acompanhamentos", nome: { pt: "Acompanhamentos" } },
+  { id: "saladas", nome: { pt: "Saladas", es: "Ensaladas" } },
+  { id: "kids", nome: { pt: "Kids", es: "Infantiles" } },
+  { id: "massas-risotos", nome: { pt: "Massas & Risotos", es: "Pastas & Risotos" } },
+  { id: "peixes-individual", nome: { pt: "Peixes & Frutos do Mar", es: "Pescados & Mariscos" } },
+  { id: "carnes-individual", nome: { pt: "Carnes & Aves", es: "Carnes & Aves" } },
+  { id: "peixes-compartilhar", nome: { pt: "Peixes & Frutos do Mar · Para 2", es: "Pescados & Mariscos · Para 2" } },
+  { id: "carnes-compartilhar", nome: { pt: "Carnes & Aves · Para 2", es: "Carnes & Aves · Para 2" } },
+  { id: "sanduiches", nome: { pt: "Sanduíches", es: "Sándwiches" } },
+  { id: "hamburgueres", nome: { pt: "Hambúrgueres", es: "Hamburguesas" } },
+  { id: "sobremesas", nome: { pt: "Sobremesas", es: "Postres" } },
+  { id: "acompanhamentos", nome: { pt: "Acompanhamentos", es: "Guarniciones" } },
 
   // ---------- BEBIDAS ----------
   { id: "soft-drink", nome: { pt: "Soft Drink" } },
-  { id: "cervejas", nome: { pt: "Cervejas" } },
-  { id: "vitaminas-shakes", nome: { pt: "Vitaminas e Shakes" } },
-  { id: "sucos", nome: { pt: "Sucos" } },
+  { id: "cervejas", nome: { pt: "Cervejas", es: "Cervezas" } },
+  { id: "cervejas-artesanais", nome: { pt: "Cervejas artesanais", es: "Cervezas artesanales" } },
+  { id: "vitaminas-shakes", nome: { pt: "Vitaminas & Milkshakes", es: "Licuados & Milkhakes } },
+  { id: "sucos", nome: { pt: "Sucos", es: "Jugos" } },
   { id: "limonadas", nome: { pt: "Limonadas" } },
-  { id: "artesanais-detox", nome: { pt: "Artesanais & Detox" } },
+  { id: "artesanais-detox", nome: { pt: "Artesanais & Detox", es: "Artesanales & Detox" } },
   {
     id: "coqueteis-praianos",
-    nome: { pt: "Coquetéis Praianos" },
-    nota: { pt: "O selo 0% indica que o drink também tem versão sem álcool." }
+    nome: { pt: "Coquetéis Praianos", es: "Cócteles de Playa" },
+    nota: { pt: "O selo 0% indica que tem versão sem álcool.", es: "El ícono 0% indica que tiene versión sin alcohol." }
   },
   { id: "caipirinhas", nome: { pt: "Caipirinhas" } },
   {
     id: "classicos-autorais",
-    nome: { pt: "Clássicos e Autorais" },
-    nota: { pt: "O selo 0% indica que o drink também tem versão sem álcool." }
+    nome: { pt: "Clássicos & Autorais", es: "Clásicos & De Autor" },
+    nota: { pt: "O selo 0% indica que tem versão sem álcool.", es: "El ícono 0% indica que tiene versión sin alcohol." }
   },
-  { id: "acais", nome: { pt: "Açaís" } }
+  { id: "acais", nome: { pt: "Açaí" } }
 ];
 
 const menuData = [
