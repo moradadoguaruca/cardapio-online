@@ -63,7 +63,7 @@ const categories = [
   { id: "soft-drink", nome: { pt: "Soft Drink" } },
   { id: "cervejas", nome: { pt: "Cervejas", es: "Cervezas" } },
   { id: "cervejas-artesanais", nome: { pt: "Cervejas artesanais", es: "Cervezas artesanales" } },
-  { id: "vitaminas-shakes", nome: { pt: "Vitaminas & Milkshakes", es: "Licuados & Milkhakes } },
+  { id: "vitaminas-shakes", nome: { pt: "Vitaminas & Milkshakes", es: "Licuados & Milkhakes" } },
   { id: "sucos", nome: { pt: "Sucos", es: "Jugos" } },
   { id: "limonadas", nome: { pt: "Limonadas" } },
   { id: "artesanais-detox", nome: { pt: "Artesanais & Detox", es: "Artesanales & Detox" } },
