@@ -45,7 +45,7 @@ const UI = {
     },
     
     roomService: {
-      title: "Servicio a la habitación",
+      title: "Servicio al cuarto",
       action: "Llame al {phone}"
     },
     menu: {
