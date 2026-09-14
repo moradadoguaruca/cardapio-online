@@ -219,8 +219,8 @@ const menuData = [
     preco: "99,90", imagem: null },
   { id: "massas-05", categoria: "massas-risotos",
     nome: { pt: "Risoto de Cogumelos e Alho-poró (vegano)" },
-    descricao: { pt: "Risoto cremoso de cogumelos shiitake e alho-poró preparado com leite de coco."
-                 es: "Risoto cremoso de hongos shiitake y puerro preparado con leche de coco."},
+    descricao: { pt: "Risoto cremoso de cogumelos shiitake e alho-poró preparado com leite de coco.",
+                 es: "Risoto cremoso de hongos shiitake y puerro preparado con leche de coco." },
     preco: "79,00", imagem: null },
 
   // ============ PEIXES E FRUTOS DO MAR — individual ============
