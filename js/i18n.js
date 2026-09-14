@@ -29,7 +29,7 @@ const UI = {
     },
     footer: {
       instagram: "Instagram",
-      website: "Site da Morada"
+      website: "Links da Morada"
     },
     langSwitch: {
       label: "Idioma"
@@ -41,7 +41,7 @@ const UI = {
       label: "Volver al inicio"
     },
     footerNote: {
-      tax: "Se añadirá una tasa del 10% a la cuenta."
+      tax: "Se adicionará un 10% de cargo por servicio a la cuenta."
     },
     
     roomService: {
@@ -54,7 +54,7 @@ const UI = {
     },
     footer: {
       instagram: "Instagram",
-      website: "Sitio de Morada"
+      website: "Links de Morada"
     },
     langSwitch: {
       label: "Idioma"
@@ -81,7 +81,7 @@ const UI = {
     },
     footer: {
       instagram: "Instagram",
-      website: "Morada's website"
+      website: "Morada's links"
     },
     langSwitch: {
       label: "Language"
