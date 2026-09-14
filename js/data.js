@@ -148,15 +148,18 @@ const menuData = [
   // ============ ENTRADAS ============
   { id: "entradas-01", categoria: "entradas",
     nome: { pt: "Búfala e Pesto" },
-    descricao: { pt: "Clássica mussarela de búfala com molho pesto e tomate-cereja assado, acompanhada de torradas de pão italiano." },
+    descricao: { pt: "Clássica mussarela de búfala com molho pesto e tomate-cereja assado, acompanhada de torradas de pão italiano.",
+                 es: "Clásica muzarella de búfala con pesto y tomates cherry asados, acompañada de tostadas de pan italiano." },
     preco: "66,00", imagem: null },
   { id: "entradas-02", categoria: "entradas",
     nome: { pt: "Tartar de Salmão" },
-    descricao: { pt: "Salmão cru picado e temperado com ervas finas, acompanhado com torradas de pão italiano." },
+    descricao: { pt: "Salmão cru picado e temperado com ervas finas, acompanhado com torradas de pão italiano.",
+                 es: "Salmón crudo picado y aliñado con finas hierbas, acompañado de tostadas de pan italiano." },
     preco: "69,00", imagem: null },
   { id: "entradas-03", categoria: "entradas",
     nome: { pt: "Bruschetta de Cogumelos" },
-    descricao: { pt: "Crocante pão italiano com cogumelos shiitake e creme azedo, finalizado com lâminas de amêndoas." },
+    descricao: { pt: "Crocante pão italiano com cogumelos shiitake e creme azedo, finalizado com lâminas de amêndoas.",
+                 es: "Tostadas de pan italiano crocante con hongos shiitake y crema ácida, finalizado con almendras laminadas." },
     preco: "62,00", imagem: null },
 
   // ============ SALADAS ============
