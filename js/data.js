@@ -374,28 +374,31 @@ const menuData = [
   { id: "acomp-08", categoria: "acompanhamentos", nome: { pt: "Legumes Grelhados na Manteiga (300g)" }, descricao: { pt: "Porção de legumes grelhadas na manteiga", es: "Porción de verduras salteas en manteca." }, preco: "", imagem: null },
 
   // ============ SOFT DRINK ============
-  { id: "soft-01", categoria: "soft-drink", nome: { pt: "Água sem Gás (500 ml)" }, descricao: { pt: "" }, preco: "8,00", imagem: null },
-  { id: "soft-02", categoria: "soft-drink", nome: { pt: "Água com Gás (500 ml)" }, descricao: { pt: "" }, preco: "8,00", imagem: null },
-  { id: "soft-03", categoria: "soft-drink", nome: { pt: "Água Tônica (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
-  { id: "soft-04", categoria: "soft-drink", nome: { pt: "Água de Coco (330 ml)" }, descricao: { pt: "" }, preco: "12,00", imagem: null },
+  { id: "soft-01", categoria: "soft-drink", nome: { pt: "Água sem Gás (500 ml)", es: "Agua sin Gas (500 ml)" }, descricao: { pt: "" }, preco: "8,00", imagem: null },
+  { id: "soft-02", categoria: "soft-drink", nome: { pt: "Água com Gás (500 ml)", es: "Agua con Gas (500 ml)" }, descricao: { pt: "" }, preco: "8,00", imagem: null },
+  { id: "soft-03", categoria: "soft-drink", nome: { pt: "Água Tônica (350 ml)", es: "Agua Tónica (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
+  { id: "soft-04", categoria: "soft-drink", nome: { pt: "Água de Coco (330 ml)", es: "Agua de Coco (330 ml)" }, descricao: { pt: "" }, preco: "12,00", imagem: null },
   { id: "soft-05", categoria: "soft-drink", nome: { pt: "Coca-Cola (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
   { id: "soft-06", categoria: "soft-drink", nome: { pt: "Coca-Cola Zero (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
   { id: "soft-07", categoria: "soft-drink", nome: { pt: "Sprite (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
-  { id: "soft-08", categoria: "soft-drink", nome: { pt: "Fanta Laranja (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
+  { id: "soft-08", categoria: "soft-drink", nome: { pt: "Fanta Laranja (350 ml)", es: "Fanta Naranja (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
   { id: "soft-09", categoria: "soft-drink", nome: { pt: "Guaraná (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
   { id: "soft-10", categoria: "soft-drink", nome: { pt: "Guaraná Zero (350 ml)" }, descricao: { pt: "" }, preco: "10,00", imagem: null },
   { id: "soft-11", categoria: "soft-drink", nome: { pt: "Red Bull (250 ml)" }, descricao: { pt: "" }, preco: "25,00", imagem: null },
 
-  // ============ CERVEJAS (inclui artesanais Schornstein, sem preço no doc) ============
+  // ============ CERVEJAS (Long neck e latas + Cerveja 0% álcool) ============
   { id: "cervejas-01", categoria: "cervejas", nome: { pt: "Corona Long Neck (330 ml)" }, descricao: { pt: "" }, preco: "19,00", imagem: null },
-  { id: "cervejas-02", categoria: "cervejas", nome: { pt: "Heineken Long Neck (330 ml)" }, descricao: { pt: "" }, preco: "17,00", imagem: null },
+  { id: "cervejas-02-1", categoria: "cervejas", nome: { pt: "Heineken Long Neck (330 ml)" }, descricao: { pt: "" }, preco: "17,00", imagem: null },
+  { id: "cervejas-02-2", categoria: "cervejas", nome: { pt: "Heineken Zero (330 ml)" }, descricao: { pt: "" }, preco: "17,00", imagem: null },
   { id: "cervejas-03", categoria: "cervejas", nome: { pt: "Stella Artois Pure Gold (330 ml)" }, descricao: { pt: "" }, preco: "17,00", imagem: null },
   { id: "cervejas-04", categoria: "cervejas", nome: { pt: "Heineken Lata (350 ml)" }, descricao: { pt: "" }, preco: "15,00", imagem: null },
   { id: "cervejas-05", categoria: "cervejas", nome: { pt: "Skol Lata (350 ml)" }, descricao: { pt: "" }, preco: "11,00", imagem: null },
-  { id: "cervejas-06", categoria: "cervejas", nome: { pt: "Schornstein Pilsen (500 ml)" }, descricao: { pt: "Cerveja artesanal." }, preco: "", imagem: null },
-  { id: "cervejas-07", categoria: "cervejas", nome: { pt: "Schornstein IPA (500 ml)" }, descricao: { pt: "Cerveja artesanal." }, preco: "", imagem: null },
-  { id: "cervejas-08", categoria: "cervejas", nome: { pt: "Schornstein APA (500 ml)" }, descricao: { pt: "Cerveja artesanal." }, preco: "", imagem: null },
 
+  // ============ CERVEJAS (Seção sem definir ainda, pode mudar marca e valores) ============
+  { id: "cervejas-06", categoria: "cervejas-artesanais", nome: { pt: "Schornstein Pilsen (500 ml)" }, descricao: { pt: "" }, preco: "", imagem: null },
+  { id: "cervejas-07", categoria: "cervejas-artesanais", nome: { pt: "Schornstein IPA (500 ml)" }, descricao: { pt: "" }, preco: "", imagem: null },
+  { id: "cervejas-08", categoria: "cervejas-artesanais", nome: { pt: "Schornstein APA (500 ml)" }, descricao: { pt: "" }, preco: "", imagem: null },
+  
   // ============ VITAMINAS E SHAKES ============
   { id: "vitaminas-01", categoria: "vitaminas-shakes", nome: { pt: "Vitamina de Banana" }, descricao: { pt: "" }, preco: "21,00", imagem: null },
   { id: "vitaminas-02", categoria: "vitaminas-shakes", nome: { pt: "Vitamina de Morango" }, descricao: { pt: "" }, preco: "21,00", imagem: null },
