@@ -457,7 +457,7 @@ const menuData = [
   { id: "limonadas-04", categoria: "limonadas",
     nome: { pt: "Limonada Suíça" },
     descricao: { pt: "Versão cremosa com leite condensado e raspas de limão.",
-                 es: "Versión cremosa con leche condensada y ralladuras de limón.},
+                 es: "Versión cremosa con leche condensada y ralladuras de limón." },
     preco: "19,00", imagem: null },
 
   // ============ ARTESANAIS & DETOX ============
