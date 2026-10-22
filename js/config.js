@@ -61,10 +61,10 @@ const siteConfig = {
   // PLACEHOLDER — este é um gráfico provisório, não uma foto real.
   // Substituir por uma fotografia real de um prato/ambiente da casa
   // (recomendado: .jpg otimizado, tons escuros, mínimo 1200px de largura).
-  heroImage: "images/hero_salmao_prato.jpg",
+  heroImage: "images/hero_belle.jpg",
   heroImageAlt: {
-    pt: "Prato de Salmão grelhado na crosta de castanha, acompanhado de puré de batata e tomate-cereja",
-    es: "Plato de Salmón a la plancha con crocante de castañas, acompañado de pure de papa y tomates cherry",
+    pt: "Filé de peixe com camarões, alcaparras y palmito, no molho de manteiga",
+    es: "Filé de pescado con camarones, alcaparras y palmito, en salsa de manteca",
     en: ""
   },
 
