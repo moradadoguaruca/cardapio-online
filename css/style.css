@@ -114,15 +114,12 @@ button {
    claro legível sobre a foto, sem escurecer a imagem inteira. Mais
    presente nas bordas superior/inferior, onde fica o texto. */
 .hero-zone__scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(62, 74, 34, 0.58) 0%,
-    rgba(62, 74, 34, 0.22) 38%,
-    rgba(62, 74, 34, 0.30) 62%,
-    rgba(62, 74, 34, 0.62) 100%
+    rgba(62, 74, 34, 0.66) 0%,
+    rgba(62, 74, 34, 0.52) 38%,
+    rgba(62, 74, 34, 0.54) 62%,
+    rgba(62, 74, 34, 0.74) 100%
   );
 }
 
@@ -139,6 +136,7 @@ button {
   gap: 26px;
   flex: 1;
   color: var(--hero-text);
+   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
 /* -----------------------------------------------------------------------
